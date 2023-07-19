@@ -1,0 +1,27 @@
+{
+  "name": "project_test_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run — env allure=true",
+    "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
+    "allure:report": "yarn run allure generate allure-results — clean -o allure-report && allure open allure-report",
+    "beforetest": "npm run clean:folders",
+    "aftertest": "npm run allure:report"
+  },
+  "author": "Viktoria Krysiuk",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.9.0"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.33.0",
+    "allure-commandline": "2.17.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ViktoriaKrysiuk/Project_Test_Task"
+  }
+}
